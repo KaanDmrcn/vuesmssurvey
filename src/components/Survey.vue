@@ -23,7 +23,8 @@
       <td >{{item.insertedBy}}</td>
       <td >{{item.insertedDate}}</td>
       <td >{{item.status}}</td>
-      <td><button class="btn btn-info">Detail</button></td>
+      
+      <td><button v-on:click="getir" class="btn btn-info">Detail</button></td>
     </tr>
   </tbody>
 </table>
@@ -41,7 +42,8 @@ import axios from "axios";
 export default {
     data(){
         return{
-            items: []
+            items: [],
+            temp:"",
         }
     },
     mounted(){
@@ -50,7 +52,11 @@ export default {
             this.items = response.data;            
         })
         .catch(e => console.log(e))
+    },
+    methods:{
+        getir(){
+            console.warn(this.temp)
+        },
     }
- 
 }
 </script>

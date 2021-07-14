@@ -34,7 +34,11 @@ import axios from "axios";
 export default {
     data(){
         return{
-            items: []
+            items: [],
+            answers: {
+                smsSurveyId: '',
+                answer: '',
+            },
         }
     },
     mounted(){
@@ -43,6 +47,9 @@ export default {
             this.items = response.data;            
         })
         .catch(e => console.log(e))
+        axios.post('http://localhost:8080/api/SmsSurveyAnswers', this.answers)
+            .then(response => console.log(response))
+            .catch(error => console.log(error))  
     }
  
 }
