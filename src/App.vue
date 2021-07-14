@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <navbar-component></navbar-component>
-    <survey-component></survey-component>
-    <people-component></people-component>
-    <answer-component></answer-component>
+    <router-view></router-view>
+ 
+
   </div>
 </template>
 

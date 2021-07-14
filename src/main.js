@@ -6,6 +6,7 @@ import {BootstrapVue} from 'bootstrap-vue'
 import Navbar from './components/Navbar'
 import People from './components/People'
 import Answer from './components/Answer'
+import Smssurvey from './components/Smssurvey'
 
 
 Vue.use(BootstrapVue)
@@ -17,6 +18,7 @@ Vue.component('survey-component', Survey);
 Vue.component('navbar-component', Navbar);
 Vue.component('people-component', People);
 Vue.component('answer-component', Answer);
+Vue.component('smssurvey-component', Smssurvey);
 Vue.config.productionTip = false
 
 new Vue({

@@ -10,8 +10,6 @@
       <th scope="col">Question</th>
       <th scope="col">InsertedBy</th>
       <th scope="col">InsertedDate</th>
-      <th scope="col">UpdatedBy</th>
-      <th scope="col">UpdatedDate</th>
       <th scope="col">Status</th>
       <th scope="col">Details</th>
     </tr>
@@ -24,8 +22,6 @@
       <td >{{item.question}}</td>
       <td >{{item.insertedBy}}</td>
       <td >{{item.insertedDate}}</td>
-      <td >{{item.updatedBy}}</td>
-      <td >{{item.updatedDate}}</td>
       <td >{{item.status}}</td>
       <td><button class="btn btn-info">Detail</button></td>
     </tr>
