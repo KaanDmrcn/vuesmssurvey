@@ -23,8 +23,9 @@
       <td >{{item.insertedBy}}</td>
       <td >{{item.insertedDate}}</td>
       <td >{{item.status}}</td>
+
+      <td><button @click="getir(item.id,item.question)" class="btn btn-info">Detail</button></td> 
       
-      <td><button v-on:click="getir" class="btn btn-info">Detail</button></td>
     </tr>
   </tbody>
 </table>
@@ -37,6 +38,7 @@
 <script>
 
 import axios from "axios";
+
 
 
 export default {
@@ -54,8 +56,11 @@ export default {
         .catch(e => console.log(e))
     },
     methods:{
-        getir(){
-            console.warn(this.temp)
+        getir(id,question){
+            this.$router.push({
+              name:"Details",
+              params:{id,question}
+            })
         },
     }
 }

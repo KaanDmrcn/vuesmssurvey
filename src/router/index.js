@@ -4,6 +4,7 @@ import Survey from '../components/Survey.vue'
 import People from '../components/People.vue'
 import Answer from '../components/Answer.vue'
 import Smssurvey from '../components/Smssurvey.vue'
+import Details from '../components/Details.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/Smssurvey',
     name: 'Smssurvey',
     component: Smssurvey
+  },
+  {
+    path: '/Details',
+    name: 'Details',
+    component: Details
   },
 ]
 const router = new VueRouter({

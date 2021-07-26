@@ -21,6 +21,7 @@
   </tbody>
 </table>
     </div>
+    <input type="text">
 </div>
 
 
