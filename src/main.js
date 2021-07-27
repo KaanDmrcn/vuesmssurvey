@@ -14,6 +14,7 @@ import Surveydetail from './components/Details/Surveydetail'
 import SurveyScreen from './components/SurveyScreen/SurveyScreen'
 import SsSurvey from './components/SurveyScreen/SsSurvey'
 import SsAnswer from './components/SurveyScreen/SsAnswer'
+import SsPeople from './components/SurveyScreen/SsPeople'
 
 
 Vue.use(BootstrapVue)
@@ -33,6 +34,7 @@ Vue.component('surveydetail-component', Surveydetail);
 Vue.component('surveyscreen-component', SurveyScreen);
 Vue.component('sssurvey-component', SsSurvey);
 Vue.component('ssanswer-component', SsAnswer);
+Vue.component('sspeople-component', SsPeople);
 Vue.config.productionTip = false
 
 new Vue({
