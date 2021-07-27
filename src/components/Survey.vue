@@ -27,7 +27,7 @@
 
       <td><button @click="getir4(item.id)" class="btn btn-info">Detail</button>
       <button @click="deleteSurvey(item.id)" class="btn btn-danger">Delete</button>
-      <button @click="release(item.id)" class="btn btn-warning">release</button></td> 
+      <button @click="release(item.id)" class="btn btn-warning">Release</button></td> 
       
       
     </tr>

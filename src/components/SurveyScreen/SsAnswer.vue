@@ -6,7 +6,7 @@
     <tr v-for="(item,index) in answers" :key="index">
       
       <td ></td>   
-      <button>{{item.answer}} </button> 
+      <button class="bg-success text-white">{{item.answer}} </button> 
       <br>  <br>
     </tr>
   </tbody>

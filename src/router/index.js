@@ -4,7 +4,7 @@ import Survey from '../components/Survey.vue'
 import People from '../components/People.vue'
 import Answer from '../components/Answer.vue'
 import Smssurvey from '../components/Smssurvey.vue'
-import Details from '../components/Details.vue'
+import Details from '../components//Details/Details.vue'
 import Peopledetail from '../components/Details/Peopledetail.vue'
 import Answerdetail from '../components/Details/Answerdetail.vue'
 import Surveydetail from '../components/Details/Surveydetail.vue'
@@ -37,7 +37,7 @@ const routes = [
     component: Smssurvey
   },
   {
-    path: '/Details',
+    path: '/Details//Details/:id',
     name: 'Details',
     component: Details
   },
