@@ -8,6 +8,9 @@ import People from './components/People'
 import Answer from './components/Answer'
 import Smssurvey from './components/Smssurvey'
 import Details from './components/Details'
+import Peopledetail from './components/Details/Peopledetail'
+import Answerdetail from './components/Details/Answerdetail'
+import Surveydetail from './components/Details/Surveydetail'
 
 
 Vue.use(BootstrapVue)
@@ -21,6 +24,9 @@ Vue.component('people-component', People);
 Vue.component('answer-component', Answer);
 Vue.component('smssurvey-component', Smssurvey);
 Vue.component('details-component', Details);
+Vue.component('peopledetail-component', Peopledetail);
+Vue.component('answerdetail-component', Answerdetail);
+Vue.component('surveydetail-component', Surveydetail);
 Vue.config.productionTip = false
 
 new Vue({

@@ -1,47 +1,34 @@
 <template>
-<div >
+<div > 
+    
+    <br>  <form class="form-control" @submit.prevent="createPost">
+    <h3>Survey Detail</h3>
+    <surveydetail-component></surveydetail-component> </form><br>
+    
+
+
+    <th><form class="form-control" @submit.prevent="createPost">
+    <h3>Survey Answers</h3>
+    <answerdetail-component></answerdetail-component></form></th>
+    
    
-    <pre>{{items}}</pre>
-    <pre>{{people}}</pre>
-    <pre>{{answers}}</pre>
+    
+    
+     <th><form class="form-control" @submit.prevent="createPost">
+    <h3>Survey People</h3>
+    <peopledetail-component></peopledetail-component></form></th>
+
+
 </div>
 </template>
 
 <script>
 
-import axios from "axios";
-
-
 
 export default {
      data(){
         return{
-            items: [],
-            people: [],
-            answers: [],
         }
-    },
-    mounted(){
-        
-        axios.get('http://localhost:8080/api/SmsSurveys/'+ this.$route.params.id)   
-        .then(response => {
-            this.items = response.data;            
-        })
-        .catch(e => console.log(e)),
-        axios.get('http://localhost:8080/api/SmsSurveyPeople/GetId/'+ this.$route.params.id)   
-        .then(response => {
-            this.people = response.data;            
-        })
-        .catch(e => console.log(e)),
-        axios.get('http://localhost:8080/api/SmsSurveyAnswers/GetId/'+ this.$route.params.id)   
-        .then(response => {
-            this.answers = response.data;            
-        })
-        .catch(e => console.log(e))
-        
-    },
-    
-    
-    
+    }    
 }
 </script>

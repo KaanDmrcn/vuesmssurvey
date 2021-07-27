@@ -16,12 +16,11 @@
       <th scope="row">{{item.id}}</th>
       <td >{{item.smsSurveyId}}</td>
       <td >{{item.answer}}</td>
-      <td><button class="btn btn-info">Detail</button></td>
+      <td><button v-on:click="deleteAnswer(item.id)" class="btn btn-info">Delete</button></td>
     </tr>
   </tbody>
 </table>
     </div>
-    <input type="text">
 </div>
 
 
@@ -36,10 +35,6 @@ export default {
     data(){
         return{
             items: [],
-            answers: {
-                smsSurveyId: '',
-                answer: '',
-            },
         }
     },
     mounted(){
@@ -48,10 +43,16 @@ export default {
             this.items = response.data;            
         })
         .catch(e => console.log(e))
-        axios.post('http://localhost:8080/api/SmsSurveyAnswers', this.answers)
+        
+    },
+     methods:{
+       
+        deleteAnswer(id){
+            axios.delete("http://localhost:8080/api/SmsSurveyAnswers/"+id)
             .then(response => console.log(response))
-            .catch(error => console.log(error))  
-    }
+            .catch(error => console.log(error))
+        },
+     }
  
 }
 </script>

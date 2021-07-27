@@ -1,7 +1,6 @@
 <template>
-<div>
-    <div>
-        <table class="table table-success table-striped">
+<div >  
+            <table class="table table-success table-striped">
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -14,7 +13,7 @@
     </tr>
   </thead>
   <tbody >
-    <tr v-for="(item,index) in items" :key="index">
+    <tr v-for="(item,index) in people" :key="index">
       <th scope="row">{{item.id}}</th>
       <td >{{item.smsSurveyId}}</td>
       <td >{{item.employeeId}}</td>
@@ -26,10 +25,7 @@
     </tr>
   </tbody>
 </table>
-    </div>
 </div>
-
-
 </template>
 
 <script>
@@ -37,19 +33,23 @@
 import axios from "axios";
 
 
+
 export default {
-    data(){
+     data(){
         return{
-            items: []
+            people: [],
         }
     },
     mounted(){
-        axios.get("http://localhost:8080/api/SmsSurveyPeople")
+        
+        axios.get('http://localhost:8080/api/SmsSurveyPeople/GetId/'+ this.$route.params.id)   
         .then(response => {
-            this.items = response.data;            
+            this.people = response.data;            
         })
-        .catch(e => console.log(e))
-    }
- 
+        .catch(e => console.log(e))       
+        
+    },  
+    
+    
 }
 </script>

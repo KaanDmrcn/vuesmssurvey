@@ -24,7 +24,7 @@
       <td >{{item.insertedDate}}</td>
       <td >{{item.status}}</td>
 
-      <td><button @click="getir(item.id,item.question)" class="btn btn-info">Detail</button></td> 
+      <td><button @click="getir4(item.id)" class="btn btn-info">Detail</button></td> 
       
     </tr>
   </tbody>
@@ -56,10 +56,28 @@ export default {
         .catch(e => console.log(e))
     },
     methods:{
-        getir(id,question){
+        getir(id){
+            this.$router.push({
+              name:"Surveydetail",
+              params:{id}
+            })
+        },
+        getir2(id){
+            this.$router.push({
+              name:"Peopledetail",
+              params:{id}
+            })
+        },
+        getir3(id){
+            this.$router.push({
+              name:"Answerdetail",
+              params:{id}
+            })
+        },
+        getir4(id){
             this.$router.push({
               name:"Details",
-              params:{id,question}
+              params:{id}
             })
         },
     }

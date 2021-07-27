@@ -5,6 +5,9 @@ import People from '../components/People.vue'
 import Answer from '../components/Answer.vue'
 import Smssurvey from '../components/Smssurvey.vue'
 import Details from '../components/Details.vue'
+import Peopledetail from '../components/Details/Peopledetail.vue'
+import Answerdetail from '../components/Details/Answerdetail.vue'
+import Surveydetail from '../components/Details/Surveydetail.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +36,21 @@ const routes = [
     path: '/Details',
     name: 'Details',
     component: Details
+  },
+  {
+    path: '/Details/Peopledetail',
+    name: 'Peopledetail',
+    component: Peopledetail
+  },
+  {
+    path: '/Details/Answerdetail',
+    name: 'Answerdetail',
+    component: Answerdetail
+  },
+  {
+    path: '/Details/Surveydetail',
+    name: 'Surveydetail',
+    component: Surveydetail
   },
 ]
 const router = new VueRouter({
