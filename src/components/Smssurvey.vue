@@ -29,7 +29,7 @@
       <label >Answer</label>    <input placeholder="güzel" type="text" v-model="people.answer"><p></p>
       <button>Create Person</button><p></p>
     </form></th>
-    <pre>{{Smssurvey}}</pre>
+   
 </div>
 </template>
 
@@ -57,7 +57,7 @@ export default {
                 smsSurveyId: '',
                 name: '',
                 phoneNumber: '',
-                Answer: '',
+                answer: '',
             },                    
         }
     },

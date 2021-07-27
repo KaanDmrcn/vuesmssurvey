@@ -1,4 +1,5 @@
 <template>
+
 <div>
     <div>
         <table class="table table-success table-striped">
@@ -24,7 +25,10 @@
       <td >{{item.insertedDate}}</td>
       <td >{{item.status}}</td>
 
-      <td><button @click="getir4(item.id)" class="btn btn-info">Detail</button></td> 
+      <td><button @click="getir4(item.id)" class="btn btn-info">Detail</button>
+      <button @click="deleteSurvey(item.id)" class="btn btn-danger">Delete</button>
+      <button @click="release(item.id)" class="btn btn-warning">release</button></td> 
+      
       
     </tr>
   </tbody>
@@ -55,28 +59,28 @@ export default {
         })
         .catch(e => console.log(e))
     },
-    methods:{
-        getir(id){
-            this.$router.push({
-              name:"Surveydetail",
-              params:{id}
-            })
-        },
-        getir2(id){
-            this.$router.push({
-              name:"Peopledetail",
-              params:{id}
-            })
-        },
-        getir3(id){
-            this.$router.push({
-              name:"Answerdetail",
-              params:{id}
-            })
-        },
+    methods:{       
         getir4(id){
             this.$router.push({
               name:"Details",
+              params:{id}
+            })
+        },
+        getData(){
+           axios.get("http://localhost:8080/api/SmsSurveys")
+          .then(response => {
+          this.items = response.data;            
+        })
+        .catch(e => console.log(e))
+        },
+        deleteSurvey(id){
+            axios.delete("http://localhost:8080/api/SmsSurveys/"+id)
+            .then(() => {this.getData()})
+            
+        },
+        release(id){
+            this.$router.push({
+              name:"SurveyScreen",
               params:{id}
             })
         },

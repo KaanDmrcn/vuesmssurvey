@@ -37,7 +37,7 @@ export default {
             items: [],
         }
     },
-    mounted(){
+    created(){
         axios.get("http://localhost:8080/api/SmsSurveyAnswers")
         .then(response => {
             this.items = response.data;            
@@ -46,11 +46,17 @@ export default {
         
     },
      methods:{
-       
+        getData(){
+           axios.get("http://localhost:8080/api/SmsSurveyAnswers")
+          .then(response => {
+          this.items = response.data;            
+        })
+        .catch(e => console.log(e))
+        },
         deleteAnswer(id){
             axios.delete("http://localhost:8080/api/SmsSurveyAnswers/"+id)
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
+            .then(() => {this.getData()})
+            
         },
      }
  
