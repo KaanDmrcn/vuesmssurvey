@@ -6,7 +6,7 @@
     <tr v-for="(item,index) in answers" :key="index">
       
       <td ></td>   
-      <button class="bg-success text-white">{{item.answer}} </button> 
+      <button  @click="answer(item.answer)" class="bg-success text-white">{{item.answer}} </button> 
       <br>  <br>
     </tr>
   </tbody>
@@ -35,6 +35,13 @@ export default {
         .catch(e => console.log(e))       
         
     },  
+    methods:{       
+        answer(answer){
+            this.$router.push({
+              name:"SsPeople",
+              params:{answer}
+            })
+        }},
     
     
 }

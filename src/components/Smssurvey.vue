@@ -41,7 +41,8 @@ import axios from "axios";
 export default {
     props:["Smssurvey"],
     data(){
-        return{                      
+        return{   
+                   
             formData: {
                 startDate: '',
                 duration: '',

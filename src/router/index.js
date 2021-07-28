@@ -12,6 +12,7 @@ import SurveyScreen from '../components/SurveyScreen/SurveyScreen.vue'
 import SsSurvey from '../components/SurveyScreen/SsSurvey.vue'
 import SsAnswer from '../components/SurveyScreen/SsAnswer.vue'
 import SsPeople from '../components/SurveyScreen/SsPeople.vue'
+import FinalScreen from '../components/SurveyScreen/FinalScreen.vue'
 
 Vue.use(VueRouter)
 
@@ -75,6 +76,11 @@ const routes = [
     path: '/SurveyScreen/SsPeople',
     name: 'SsPeople',
     component: SsPeople
+  },
+  {
+    path: '/SurveyScreen/FinalScreen/:smsSurveyId',
+    name: 'FinalScreen',
+    component: FinalScreen
   },
 ]
 const router = new VueRouter({

@@ -5,8 +5,18 @@
   <br>
   <th><ssanswer-component></ssanswer-component></th>
   <br>
-  <th><sspeople-component></sspeople-component></th>
-  
+
+
+<div>
+<tr v-for="(item,index) in items" :key="index">
+      
+      <td>{{item.id}}</td>   
+      
+      <br>  <br>
+       <td> <button @click="release(item.smsSurveyId,item.id)" class="btn btn-warning">Release</button></td>
+    </tr>
+   
+</div>
 
 
 </div>
@@ -23,12 +33,23 @@ export default {
         }},
 
       created(){
-        axios.get("http://localhost:8080/api/SmsSurveyPeople/"+this.id)
+        axios.get('http://localhost:8080/api/SmsSurveyPeople/GetId/'+this.id)
         .then(response => {
             this.items = response.data;            
         })
         .catch(e => console.log(e))
     },
+
+    methods:{       
+        release(id,smsSurveyId){
+            this.$router.push({
+              name:"FinalScreen",
+              params:{id,smsSurveyId}
+            })
+        }},
+        
+
+    
 
     }    
 

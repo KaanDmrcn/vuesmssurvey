@@ -3,7 +3,7 @@
             
  
   <tbody >
-    <tr v-for="(item,index) in answers" :key="index">
+    <tr v-for="(item,index) in people" :key="index">
       
       <td>{{item.id}}</td>   
       
@@ -23,7 +23,7 @@ import axios from "axios";
 export default {
      data(){
         return{
-            answers: [],
+            people: [],
             list: [],
         }
     },
@@ -31,7 +31,7 @@ export default {
         
         axios.get('http://localhost:8080/api/SmsSurveyPeople/GetId/'+ this.$route.params.id)   
         .then(response => {
-            this.answers = response.data;            
+            this.people = response.data;            
         })
         .catch(e => console.log(e))       
         
