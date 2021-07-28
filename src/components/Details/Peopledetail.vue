@@ -10,6 +10,7 @@
       <th scope="col">PhoneNumber</th>
       <th scope="col">SmsResult</th>
       <th scope="col">Answer</th>      
+      <th></th>
     </tr>
   </thead>
   <tbody >
@@ -21,7 +22,8 @@
       <td >{{item.phoneNumber}}</td>
       <td >{{item.smsResult}}</td>
       <td >{{item.answer}}</td>
-      
+            <td><button v-on:click="deletePerson(item.id)" class="btn btn-info">Delete</button></td>
+
     </tr>
   </tbody>
 </table>
@@ -38,17 +40,32 @@ export default {
      data(){
         return{
             people: [],
+            temp: this.$route.params.id,
         }
     },
     mounted(){
         
-        axios.get('http://localhost:8080/api/SmsSurveyPeople/GetId/'+ this.$route.params.id)   
+        axios.get('http://localhost:8080/api/SmsSurveyPeople/GetId/'+ this.temp)   
         .then(response => {
             this.people = response.data;            
         })
         .catch(e => console.log(e))       
         
     },  
+     methods:{
+        getData(){
+           axios.get('http://localhost:8080/api/SmsSurveyPeople/GetId/'+ this.temp)   
+        .then(response => {
+            this.people = response.data;            
+        })
+        .catch(e => console.log(e))
+        },
+        deletePerson(id){
+            axios.delete("http://localhost:8080/api/SmsSurveyPeople/"+id)
+            .then(() => {this.getData()})
+            
+        },
+     }
     
     
 }

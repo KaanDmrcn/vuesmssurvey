@@ -26,6 +26,16 @@
       <button>Create Answer</button><p></p>
       
     </form></th>
+
+     <th>
+    <form class="form-control" @submit.prevent="createPerson">
+      <th><h3>Person Information</h3></th> <hr>
+        <input type="hidden" v-model="people.smsSurveyId"><p></p>
+      <label >Name</label>   <input placeholder="kaan" type="text" v-model="people.name"><p></p>
+      <label >PhoneNumber</label>   <input placeholder="05556667788" type="text" v-model="people.phoneNumber"><p></p>
+      
+      <button>Create Person</button><p></p>
+    </form></th>
 </div>
 </template>
 
@@ -39,6 +49,12 @@ export default {
                 smsSurveyId: this.$route.params.id,
                 answer: '',
             },
+            people: {
+                smsSurveyId: this.$route.params.id,
+                name: '',
+                phoneNumber: '',
+                answer: 'temp',
+            }, 
         }
     },
     methods: {
@@ -47,10 +63,12 @@ export default {
             .then(response => console.log(response))
             .catch(error => console.log(error))      
         },
-        refresh(){ 
-            location.reload()             
-                  
+        createPerson(){            
+            axios.post('http://localhost:8080/api/SmsSurveyPeople', this.people)
+            .then(response => console.log(response))
+            .catch(error => console.log(error))      
         },
+        
     }    
 }
 </script>
