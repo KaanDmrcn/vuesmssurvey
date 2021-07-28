@@ -21,7 +21,7 @@
 <th>
     <form class="form-control" @submit.prevent="createAnswer">
       <th><h3>Answer Information</h3></th> <hr>
-      <label >SmsSurveyId</label>   <input placeholder="17" type="text" v-model="answers.smsSurveyId"><p></p>
+         <input value="smsSurveyId" placeholder="17" type="hidden" v-model="answers.smsSurveyId"><p></p>
       <label >Answer</label>    <input placeholder="güzel" type="text" v-model="answers.answer"><p></p>
       <button>Create Answer</button><p></p>
     </form></th>
@@ -35,7 +35,7 @@ export default {
      data(){
         return{
             answers: {
-                smsSurveyId: '',
+                smsSurveyId: this.$route.params.id,
                 answer: '',
             },
         }
