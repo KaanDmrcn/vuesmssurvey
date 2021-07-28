@@ -5,7 +5,7 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">SmsSurveyId</th>
-      <th scope="col">EmployeeId</th>
+
       <th scope="col">Name</th>
       <th scope="col">PhoneNumber</th>
       <th scope="col">SmsResult</th>
@@ -16,7 +16,7 @@
     <tr v-for="(item,index) in people" :key="index">
       <th scope="row">{{item.id}}</th>
       <td >{{item.smsSurveyId}}</td>
-      <td >{{item.employeeId}}</td>
+
       <td >{{item.name}}</td>
       <td >{{item.phoneNumber}}</td>
       <td >{{item.smsResult}}</td>

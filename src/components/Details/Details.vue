@@ -24,6 +24,7 @@
          <input value="smsSurveyId" placeholder="17" type="hidden" v-model="answers.smsSurveyId"><p></p>
       <label >Answer</label>    <input placeholder="güzel" type="text" v-model="answers.answer"><p></p>
       <button>Create Answer</button><p></p>
+      
     </form></th>
 </div>
 </template>
