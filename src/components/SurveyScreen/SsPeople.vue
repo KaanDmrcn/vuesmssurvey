@@ -29,7 +29,7 @@ export default {
     },
     mounted(){
         
-        axios.get('http://localhost:8081/api/SmsSurveyPeople/GetId/'+ this.$route.params.id)   
+        axios.get('https://localhost:44303/api/SmsSurveyPeople/GetId/'+ this.$route.params.id)   
         .then(response => {
             this.people = response.data;            
         })

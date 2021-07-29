@@ -14,7 +14,7 @@
       <th scope="row">{{item.id}}</th>
       <td >{{item.smsSurveyId}}</td>
       <td >{{item.answer}}</td>      
-      <td><button v-on:click="deleteAnswer(item.id)" class="btn btn-info">Delete</button></td>
+      <td><a v-on:click="deleteAnswer(item.id)" class="btn btn-danger">Delete</a></td>
     </tr>
   </tbody>
 </table>
@@ -36,7 +36,7 @@ export default {
     },
     mounted(){
         
-        axios.get('http://localhost:8081/api/SmsSurveyAnswers/GetId/'+ this.temp)   
+        axios.get('https://localhost:44303/api/SmsSurveyAnswers/GetId/'+ this.temp)   
         .then(response => {
             this.answers = response.data;            
         })
@@ -46,16 +46,15 @@ export default {
     methods:{
         getData(){
           
-        axios.get('http://localhost:8081/api/SmsSurveyAnswers/GetId/'+ this.temp)   
+        axios.get('https://localhost:44303/api/SmsSurveyAnswers/GetId/'+ this.temp)   
         .then(response => {
             this.answers = response.data;            
         })
         .catch(e => console.log(e))
         },
         deleteAnswer(id){
-            axios.delete('http://localhost:8081/api/SmsSurveyAnswers/'+id)
-            .then(response => console.log(response))
-            .catch(error => console.log(error))  
+            axios.delete('https://localhost:44303/api/SmsSurveyAnswers/'+id)
+            .then(() => {this.getData()})  
             
         },
      }

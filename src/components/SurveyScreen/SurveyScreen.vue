@@ -33,7 +33,7 @@ export default {
         }},
 
       created(){
-        axios.get('http://localhost:8081/api/SmsSurveyPeople/GetId/'+this.id)
+        axios.get('https://localhost:44303/api/SmsSurveyPeople/GetId/'+this.id)
         .then(response => {
             this.items = response.data;            
         })

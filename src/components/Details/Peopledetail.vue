@@ -22,7 +22,7 @@
       <td >{{item.phoneNumber}}</td>
       <td >{{item.smsResult}}</td>
       <td >{{item.answer}}</td>
-            <td><button v-on:click="deletePerson(item.id)" class="btn btn-info">Delete</button></td>
+            <td><a v-on:click="deletePerson(item.id)" class="btn btn-danger">Delete</a></td>
 
     </tr>
   </tbody>
@@ -45,7 +45,7 @@ export default {
     },
     mounted(){
         
-        axios.get('http://localhost:8081/api/SmsSurveyPeople/GetId/'+ this.temp)   
+        axios.get('https://localhost:44303/api/SmsSurveyPeople/GetId/'+ this.temp)   
         .then(response => {
             this.people = response.data;            
         })
@@ -54,14 +54,14 @@ export default {
     },  
      methods:{
         getData(){
-           axios.get('http://localhost:8080/api/SmsSurveyPeople/GetId/'+ this.temp)   
+           axios.get('https://localhost:44303/api/SmsSurveyPeople/GetId/'+ this.temp)   
         .then(response => {
             this.people = response.data;            
         })
         .catch(e => console.log(e))
         },
         deletePerson(id){
-            axios.delete("http://localhost:8080/api/SmsSurveyPeople/"+id)
+            axios.delete("https://localhost:44303/api/SmsSurveyPeople/"+id)
             .then(() => {this.getData()})
             
         },

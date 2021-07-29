@@ -34,13 +34,13 @@ export default {
         }
     },
     mounted(){
-                axios.get('http://localhost:8081/api/Statistic/'+ this.temp)   
+                axios.get('https://localhost:44303/api/Statistic/'+ this.temp)   
         .then(response => {
             this.counter = response.data;            
         })
         .catch(e => console.log(e))      
         
-        axios.get('http://localhost:8081/api/Statistic/GetTemp/'+ this.temp)   
+        axios.get('https://localhost:44303/api/Statistic/GetTemp/'+ this.temp)   
         .then(response => {
             this.text = response.data;            
         })
