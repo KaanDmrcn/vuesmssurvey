@@ -1,11 +1,14 @@
 <template>
-<div >  
-       <h3>Total : {{counter}} </h3>  
+<div>  
+    <table class="table table-success table-striped">
+         
        <tr v-for="(item,index) in text" :key="index">
-      <th scope="row">{{item.answer}}    :         </th>
+      <th scope="row">{{item.answer}}    :   </th>
       <br>
       <td >{{item.count}}</td>
     </tr>
+    <h3>Total : {{counter}} </h3>
+    </table>
 <div>
 
 
