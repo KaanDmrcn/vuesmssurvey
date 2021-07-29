@@ -8,6 +8,7 @@ import Details from '../components//Details/Details.vue'
 import Peopledetail from '../components/Details/Peopledetail.vue'
 import Answerdetail from '../components/Details/Answerdetail.vue'
 import Surveydetail from '../components/Details/Surveydetail.vue'
+import Statistic from '../components/Details/Statistic.vue'
 import SurveyScreen from '../components/SurveyScreen/SurveyScreen.vue'
 import SsSurvey from '../components/SurveyScreen/SsSurvey.vue'
 import SsAnswer from '../components/SurveyScreen/SsAnswer.vue'
@@ -56,6 +57,11 @@ const routes = [
     path: '/Details/Surveydetail',
     name: 'Surveydetail',
     component: Surveydetail
+  },
+  {
+    path: '/Details/Statistic',
+    name: 'Statistic',
+    component: Statistic
   },
   {
     path: '/SurveyScreen/SurveyScreen/:id',

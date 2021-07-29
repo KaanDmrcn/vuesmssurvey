@@ -45,7 +45,7 @@ export default {
     },
     mounted(){
         
-        axios.get('http://localhost:8080/api/SmsSurveyPeople/GetId/'+ this.temp)   
+        axios.get('http://localhost:8081/api/SmsSurveyPeople/GetId/'+ this.temp)   
         .then(response => {
             this.people = response.data;            
         })

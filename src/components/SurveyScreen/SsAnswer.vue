@@ -28,7 +28,7 @@ export default {
     },
     mounted(){
         
-        axios.get('http://localhost:8080/api/SmsSurveyAnswers/GetId/'+ this.$route.params.id)   
+        axios.get('http://localhost:8081/api/SmsSurveyAnswers/GetId/'+ this.$route.params.id)   
         .then(response => {
             this.answers = response.data;            
         })

@@ -36,7 +36,7 @@ export default {
     },
     mounted(){
         
-        axios.get('http://localhost:8080/api/SmsSurveyAnswers/GetId/'+ this.temp)   
+        axios.get('http://localhost:8081/api/SmsSurveyAnswers/GetId/'+ this.temp)   
         .then(response => {
             this.answers = response.data;            
         })
@@ -46,14 +46,14 @@ export default {
     methods:{
         getData(){
           
-        axios.get('http://localhost:8080/api/SmsSurveyAnswers/GetId/'+ this.temp)   
+        axios.get('http://localhost:8081/api/SmsSurveyAnswers/GetId/'+ this.temp)   
         .then(response => {
             this.answers = response.data;            
         })
         .catch(e => console.log(e))
         },
         deleteAnswer(id){
-            axios.delete('http://localhost:8080/api/SmsSurveyAnswers/'+id)
+            axios.delete('http://localhost:8081/api/SmsSurveyAnswers/'+id)
             .then(response => console.log(response))
             .catch(error => console.log(error))  
             

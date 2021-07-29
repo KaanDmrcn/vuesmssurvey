@@ -11,6 +11,7 @@ import Details from './components//Details/Details'
 import Peopledetail from './components/Details/Peopledetail'
 import Answerdetail from './components/Details/Answerdetail'
 import Surveydetail from './components/Details/Surveydetail'
+import Statistic from './components/Details/Statistic'
 import SurveyScreen from './components/SurveyScreen/SurveyScreen'
 import SsSurvey from './components/SurveyScreen/SsSurvey'
 import SsAnswer from './components/SurveyScreen/SsAnswer'
@@ -32,6 +33,7 @@ Vue.component('details-component', Details);
 Vue.component('peopledetail-component', Peopledetail);
 Vue.component('answerdetail-component', Answerdetail);
 Vue.component('surveydetail-component', Surveydetail);
+Vue.component('statistic-component', Statistic);
 Vue.component('surveyscreen-component', SurveyScreen);
 Vue.component('sssurvey-component', SsSurvey);
 Vue.component('ssanswer-component', SsAnswer);

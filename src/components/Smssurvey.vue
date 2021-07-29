@@ -63,17 +63,17 @@ export default {
     },
     methods: {
         createPost(){
-            axios.post('http://localhost:8080/api/SmsSurveys', this.formData)
+            axios.post('http://localhost:8081/api/SmsSurveys', this.formData)
             .then(response => console.log(response))
             .catch(error => console.log(error))    
         },
         createAnswer(){            
-            axios.post('http://localhost:8080/api/SmsSurveyAnswers', this.answers)
+            axios.post('http://localhost:8081/api/SmsSurveyAnswers', this.answers)
             .then(response => console.log(response))
             .catch(error => console.log(error))      
         },
         createPerson(){            
-            axios.post('http://localhost:8080/api/SmsSurveyPeople', this.people)
+            axios.post('http://localhost:8081/api/SmsSurveyPeople', this.people)
             .then(response => console.log(response))
             .catch(error => console.log(error))      
         },

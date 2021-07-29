@@ -45,13 +45,13 @@ export default {
         }},
         mounted(){
         
-        axios.get('http://localhost:8080/api/SmsSurveyAnswers/GetId/'+ this.$route.params.id)   
+        axios.get('http://localhost:8081/api/SmsSurveyAnswers/GetId/'+ this.$route.params.id)   
         .then(response => {
             this.answers = response.data;            
         })
         .catch(e => console.log(e))    
 
-        axios.get('http://localhost:8080/api/SmsSurveyPeople/'+ this.$route.params.smsSurveyId)   
+        axios.get('http://localhost:8081/api/SmsSurveyPeople/'+ this.$route.params.smsSurveyId)   
         .then(response => {
             this.peoplee = response.data;            
         })
@@ -74,7 +74,7 @@ export default {
         }, 
         
         changeAnswer(){            
-            axios.put('http://localhost:8080/api/SmsSurveyPeople/'+ this.$route.params.smsSurveyId , this.peoplee)
+            axios.put('http://localhost:8081/api/SmsSurveyPeople/'+ this.$route.params.smsSurveyId , this.peoplee)
             .then(response => console.log(response))
             .catch(error => console.log(error))      
         },
