@@ -14,9 +14,13 @@ import SsSurvey from '../components/SurveyScreen/SsSurvey.vue'
 import SsAnswer from '../components/SurveyScreen/SsAnswer.vue'
 import SsPeople from '../components/SurveyScreen/SsPeople.vue'
 import FinalScreen from '../components/SurveyScreen/FinalScreen.vue'
-
+import Deneme from '../components/Details/Deneme.vue'
+import VueFusionCharts from 'vue-fusioncharts';
+import FusionCharts from 'fusioncharts';
+import Charts from 'fusioncharts/fusioncharts.charts';
+import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion'
 Vue.use(VueRouter)
-
+Vue.use(VueFusionCharts, FusionCharts, Charts, FusionTheme)
 const routes = [
   {
     path: '/Survey',
@@ -62,6 +66,11 @@ const routes = [
     path: '/Details/Statistic',
     name: 'Statistic',
     component: Statistic
+  },
+  {
+    path: '/Details/Deneme',
+    name: 'Deneme',
+    component: Deneme
   },
   {
     path: '/SurveyScreen/SurveyScreen/:id',

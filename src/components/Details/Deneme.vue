@@ -1,14 +1,15 @@
 <template>
 <div>  
-    <table class="table table-success table-striped">
-         
-       <tr v-for="(item,index) in text" :key="index">
-      <th scope="row">{{item.label}}    :   </th>
-      <br>
-      <td >{{item.value}}</td>
-    </tr>
-    <h3>Total : {{counter}} </h3>
-    </table>
+
+
+        <fusioncharts
+    :type="type"
+    :width="width"
+    :height="height"
+    :dataFormat="dataFormat"
+    :dataSource="dataSource"   
+    ></fusioncharts>
+    <br>
 
 
 </div>
@@ -20,12 +21,22 @@ import axios from "axios";
 
 
 export default {
-    
+
      data(){
         return{
-            counter: 0,
-            text: [],
-            temp: this.$route.params.id,
+        counter: 0,
+        text: [],
+        temp: this.$route.params.id,
+        type: 'pie2d',
+        width: '100%',
+        height: '400',
+        dataFormat: 'json',
+        dataSource: {
+   "data": []
+   
+},
+        radioValue: 'none',
+        lastActive: 'none'
 
             
         }
@@ -39,21 +50,18 @@ export default {
         
         axios.get('https://localhost:44303/api/Statistic/GetTemp/'+ this.temp)   
         .then(response => {
-            this.text = response.data;            
+            this.text = response.data;     
+            this.dataSource['data'] = response.data
         })
         .catch(e => console.log(e))   
         
   
     },  
      methods:{
-         count(){
-             this.counter = this.counter++
-         }
-
-     },
-    
+         
+        
+     }
     
 }
 </script>
-
 

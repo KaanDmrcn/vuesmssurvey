@@ -12,6 +12,7 @@ import Peopledetail from './components/Details/Peopledetail'
 import Answerdetail from './components/Details/Answerdetail'
 import Surveydetail from './components/Details/Surveydetail'
 import Statistic from './components/Details/Statistic'
+import Deneme from './components/Details/Deneme'
 import SurveyScreen from './components/SurveyScreen/SurveyScreen'
 import SsSurvey from './components/SurveyScreen/SsSurvey'
 import SsAnswer from './components/SurveyScreen/SsAnswer'
@@ -24,6 +25,8 @@ Vue.use(BootstrapVue)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+
+
 Vue.component('survey-component', Survey);
 Vue.component('navbar-component', Navbar);
 Vue.component('people-component', People);
@@ -34,12 +37,14 @@ Vue.component('peopledetail-component', Peopledetail);
 Vue.component('answerdetail-component', Answerdetail);
 Vue.component('surveydetail-component', Surveydetail);
 Vue.component('statistic-component', Statistic);
+Vue.component('deneme-component', Deneme);
 Vue.component('surveyscreen-component', SurveyScreen);
 Vue.component('sssurvey-component', SsSurvey);
 Vue.component('ssanswer-component', SsAnswer);
 Vue.component('sspeople-component', SsPeople);
 Vue.component('finalscreen-component', FinalScreen);
 Vue.config.productionTip = false
+
 
 new Vue({
   router,

@@ -10,7 +10,8 @@
     <th><form class="form-control">
     <h3 class="p-3 mb-2 bg-info text-white">Survey Answers</h3>
     <answerdetail-component></answerdetail-component></form>
-    <form ><h2 class="p-3 mb-2 bg-info text-white">Survey Statistics</h2><statistic-component></statistic-component></form></th>
+    <form ><h2 class="p-3 mb-2 bg-info text-white">Survey Statistics</h2>
+    <deneme-component></deneme-component></form></th>
     
    
     
